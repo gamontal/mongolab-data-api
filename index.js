@@ -40,7 +40,7 @@ var MongoLab = function (apiKey) {
       f: options.setOfFields || null,
       fo: options.findOne || null,
       s: options.sortOrder || null,
-      sk: options. resultsToSkip || null,
+      sk: options.skipResults || null,
       l: options.limit || null
     };
 

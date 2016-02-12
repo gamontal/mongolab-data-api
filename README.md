@@ -1,4 +1,4 @@
-# mongolab-data-api [![Build Status](https://travis-ci.org/gmontalvoriv/mongolab-data-api.svg?branch=master)](https://travis-ci.org/gmontalvoriv/mongolab-data-api)
+# mongolab-data-api [![Build Status](https://travis-ci.org/gmontalvoriv/mongolab-data-api.svg?branch=master)](https://travis-ci.org/gmontalvoriv/mongolab-data-api) [![npm version](https://badge.fury.io/js/mongolab-data-api.svg)](https://badge.fury.io/js/mongolab-data-api)
 
 `mongolab-data-api` is a node.js module designed to allow you to access [MongoLab's Data API](http://docs.mongolab.com/data-api/#reference) with minimal overhead.
 
@@ -8,7 +8,7 @@ I designed mongolab-data-api so the only documentation you need, in addition to 
 
 Using [npm](https://www.npmjs.com/):
 
-    $ npm install mongolab-data-api
+    $ npm install --save mongolab-data-api
 
 If you don't have or don't want to use npm:
 

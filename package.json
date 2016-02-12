@@ -1,5 +1,5 @@
 {
-  "name": "mongolab-api",
+  "name": "mongolab-data-api",
   "version": "1.0.0",
   "description": "A NodeJS wrapper for MongoLab’s Data API",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gmontalvoriv/mongolab-api.git"
+    "url": "git+https://github.com/gmontalvoriv/mongolab-data-api.git"
   },
   "keywords": [
     "mongodb",
@@ -18,9 +18,9 @@
   "author": "Gabriel Montalvo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gmontalvoriv/mongolab-api/issues"
+    "url": "https://github.com/gmontalvoriv/mongolab-data-api/issues"
   },
-  "homepage": "https://github.com/gmontalvoriv/mongolab-api#readme",
+  "homepage": "https://github.com/gmontalvoriv/mongolab-data-api#readme",
   "dependencies": {
     "xmlhttprequest": "^1.8.0"
   }

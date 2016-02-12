@@ -4,7 +4,7 @@
   "description": "A NodeJS wrapper for MongoLab’s Data API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jshint index.js"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,8 @@
   "homepage": "https://github.com/gmontalvoriv/mongolab-data-api#readme",
   "dependencies": {
     "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "jshint": "*"
   }
 }

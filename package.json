@@ -15,6 +15,10 @@
     "mongolab",
     "api"
   ],
+  "files": [
+    "lib",
+    "*.js"
+  ],
   "author": "Gabriel Montalvo",
   "license": "MIT",
   "bugs": {

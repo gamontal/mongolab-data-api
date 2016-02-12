@@ -1,5 +1,4 @@
 /* TODO
-   View, update or delete a single document
    Run database and collection-level commands
 */
 
@@ -109,13 +108,57 @@ var MongoLab = function (apiKey) {
     if (database == null || collectionName == null) {
       cb(new Error('invalid options'), null);
     } else {
-      var res = httpReq.httpPUT(BASEURL + 'databases/' + database + '/collections/' + collectionName
-                                + '?apiKey=' + this.APIKEY + (OPTIONAL_PARAMS.q ? '&q=' + OPTIONAL_PARAMS.q : ''), documents);
+      var res = httpReq.httpPUT(BASEURL + 'databases/' + database + '/collections/' + collectionName +
+                                '?apiKey=' + this.APIKEY + (OPTIONAL_PARAMS.q ? '&q=' + OPTIONAL_PARAMS.q : ''), documents);
 
       cb(null, res);
     }
   };
 
+  this.viewDocument = function (options, cb) {
+    var database = options.database || null;
+    var collectionName = options.collectionName || null;
+    var id = options.id || null;
+
+    if (typeof id !== 'string' || id == null) {
+      cb(new Error('document id is required'), null);
+    } else {
+
+      var res = httpReq.httpGET(BASEURL + 'databases/' + database + '/collections/' + collectionName + '/' + id + '?apiKey=' + this.APIKEY);
+
+      cb(null, res);
+    }
+  };
+
+  this.updateDocument = function (options, cb) {
+    var database = options.database || null;
+    var collectionName = options.collectionName || null;
+    var id = options.id || null;
+    var updateObject = options.updateObject || null;
+
+    if (typeof id !== 'string' || id == null || updateObject == null) {
+      cb(new Error('document id is required'), null);
+    } else {
+      var res = httpReq.httpPUT(BASEURL + 'databases/' + database + '/collections/' + collectionName + '/' + id + '?apiKey=' +
+                                this.APIKEY, updateObject);
+
+      cb(null, res);
+    }
+  };
+
+  this.deleteDocument = function (options, cb) {
+    var database = options.database || null;
+    var collectionName = options.collectionName || null;
+    var id = options.id || null;
+
+    if (typeof id !== 'string' || id == null) {
+      cb(new Error('document id is required'), null);
+    } else {
+      var res = httpReq.httpDELETE(BASEURL + 'databases/' + database + '/collections/' + collectionName + '/' + id + '?apiKey=' + this.APIKEY);
+
+      cb(null, res);
+    }
+  };
 }).call(MongoLab.prototype);
 
 module.exports = MongoLab;

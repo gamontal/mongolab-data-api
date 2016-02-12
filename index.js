@@ -1,7 +1,3 @@
-/* TODO
-   Run database and collection-level commands
-*/
-
 'use strict';
 
 var httpReq = require('./lib/request');
@@ -155,6 +151,19 @@ var MongoLab = function (apiKey) {
       cb(new Error('document id is required'), null);
     } else {
       var res = httpReq.httpDELETE(BASEURL + 'databases/' + database + '/collections/' + collectionName + '/' + id + '?apiKey=' + this.APIKEY);
+
+      cb(null, res);
+    }
+  };
+
+  this.runCommand = function (options, cb) {
+    var database = options.database || null;
+    var commands = options.commands || null;
+
+    if (database == null || commands == null) {
+      cb(new Error('invalid options'), null);
+    } else {
+      var res = httpReq.httpPOST(BASEURL + 'databases/' + database + '/runCommand?apiKey=' + this.APIKEY, commands);
 
       cb(null, res);
     }

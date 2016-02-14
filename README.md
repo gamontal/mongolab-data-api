@@ -217,4 +217,4 @@ merge it.
 
 ## License
 
-[MIT](https://github.com/gmontalvoriv/xwbp/blob/master/LICENSE) © Gabriel Montalvo
+[MIT](https://github.com/gmontalvoriv/mongolab-data-api/blob/master/LICENSE) © Gabriel Montalvo

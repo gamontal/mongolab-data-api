@@ -34,6 +34,19 @@ mongolab.listDatabases(function (err, data) {
 });
 ```
 
+**List available documents for a given collection**
+
+```javascript
+var options = {
+  database: 'exampledb',
+  collectionName: 'examples',
+  query: '{ "key": "value" }'
+};
+
+mongolab.listDocuments(options, function (err, data) {
+  console.log(data); //=> [ { _id: 1234, ...  } ]
+});
+```
 ### Methods
 
 #### `listDatabases`

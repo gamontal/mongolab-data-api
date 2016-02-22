@@ -23,7 +23,7 @@ To require the library and initialize it with your account API key:
 var mongolab = require('mongolab-data-api')('<Your Api Key Here>');
 ```
 
-**List available databases**
+**List databases**
 
 ```javascript
 mongolab.listDatabases(function (err, data) {
@@ -34,7 +34,15 @@ mongolab.listDatabases(function (err, data) {
 });
 ```
 
-**List available documents for a given collection**
+**List collections**
+
+```javascript
+mongolab.listCollections('exampledb', function (err, collections) {
+  console.log(collections); // => [coll1, coll2, ...]
+});
+```
+
+**List documents**
 
 ```javascript
 var options = {
@@ -59,9 +67,9 @@ Get the databases linked to the authenticated account
 
 Get the collections in the specified database
 
-`.listCollections(options, callback)`
+`.listCollections(database, callback)`
 
-***Options:***
+***Parameters:***
 
 Name | Description | Type | Required |
 -----|------------ |------|----------|

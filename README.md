@@ -74,7 +74,7 @@ Get the collections in the specified database
 ***Parameters:***
 
 Name | Description | Type | Required |
------|------------ |------|----------|
+-----|------------ |------|:----------:|
 database| MongoDB database name | `String` | Yes |
 
 #### `listDocuments`
@@ -86,7 +86,7 @@ Get the documents in the specified collection
 ***Options:***
 
 Name | Description | Type | Required |
------|------------ |------|----------|
+-----|------------ |------|:----------:|
 database| MongoDB database name | `String` | Yes |
 collectionName| MongoDB collection name | `String` | Yes |
 query| restrict results by the specified JSON query | `String` | No |
@@ -106,7 +106,7 @@ Create a new document in the specified collection
 ***Options:***
 
 Name | Description | Type | Required |
------|------------ |------|----------|
+-----|------------ |------|:----------:|
 database| MongoDB database name | `String` | Yes |
 collectionName| MongoDB collection name | `String` | Yes |
 documents| a document or array of documents to be inserted| `Object/Array` | Yes |
@@ -120,7 +120,7 @@ Update one or more documents in the specified collection
 ***Options:***
 
 Name | Description | Type | Required |
------|------------ |------|----------|
+-----|------------ |------|:----------:|
 database| MongoDB database name | `String` | Yes |
 collectionName| MongoDB collection name | `String` | Yes |
 data| replacement document or update modifiers | `Object` | Yes |
@@ -137,7 +137,7 @@ Replace the contents of some or all documents of a collection
 ***Options:***
 
 Name | Description | Type | Required |
------|------------ |------|----------|
+-----|------------ |------|:----------:|
 database| MongoDB database name | `String` | Yes |
 collectionName| MongoDB collection name | `String` | Yes |
 query| only replace the document(s) matching the specified JSON query | `String` | No |
@@ -151,7 +151,7 @@ View a single document
 ***Options:***
 
 Name | Description | Type | Required |
------|------------ |------|----------|
+-----|------------ |------|:----------:|
 database| MongoDB database name | `String` | Yes |
 collectionName| MongoDB collection name | `String` | Yes |
 id| the document's id | - | Yes |
@@ -165,7 +165,7 @@ Update a single document
 ***Options:***
 
 Name | Description | Type | Required |
------|------------ |------|----------|
+-----|------------ |------|:----------:|
 database| MongoDB database name | `String` | Yes |
 collectionName| MongoDB collection name | `String` | Yes |
 id| the document's id | - | Yes |
@@ -180,7 +180,7 @@ Delete a single document
 ***Options:***
 
 Name | Description | Type | Required |
------|------------ |------|----------|
+-----|------------ |------|:----------:|
 database| MongoDB database name | `String` | Yes |
 collectionName| MongoDB collection name | `String` | Yes |
 id| the document's id | - | Yes |
@@ -194,7 +194,7 @@ Run a MongoDB database command
 ***Options:***
 
 Name | Description | Type | Required |
------|------------ |------|----------|
+-----|------------ |------|:----------:|
 database| MongoDB database name | `String` | Yes |
 commands| the document's id | `Object` | Yes |
 

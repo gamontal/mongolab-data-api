@@ -1,6 +1,6 @@
 # mongolab-data-api [![Build Status](https://travis-ci.org/gmontalvoriv/mongolab-data-api.svg?branch=master)](https://travis-ci.org/gmontalvoriv/mongolab-data-api) [![npm version](https://badge.fury.io/js/mongolab-data-api.svg)](https://badge.fury.io/js/mongolab-data-api)
 
-`mongolab-data-api` is a node.js module designed to allow you to access [MongoLab's Data API](http://docs.mongolab.com/data-api/#reference) with minimal overhead.
+`mongolab-data-api` is a node.js module designed to allow you to access [mLab's Data API](http://docs.mlab.com/data-api/#reference) with minimal overhead.
 
 I designed mongolab-data-api so the only documentation you need, in addition to the Data API specification, is how to install node, how to install the module, and how to make a call.
 
@@ -20,7 +20,7 @@ If you don't have or don't want to use npm:
 To require the library and initialize it with your account API key:
 
 ```javascript
-var mongolab = require('mongolab-data-api')('<Your Api Key Here>');
+var mLab = require('mongolab-data-api')('<Your Api Key Here>');
 ```
 
 ### Examples
@@ -28,7 +28,7 @@ var mongolab = require('mongolab-data-api')('<Your Api Key Here>');
 **List databases**
 
 ```javascript
-mongolab.listDatabases(function (err, data) {
+mLab.listDatabases(function (err, data) {
     if (err) { console.log(err); }
     else {
         console.log(data); // => [db1, db2, db3, ...]
@@ -39,7 +39,7 @@ mongolab.listDatabases(function (err, data) {
 **List collections**
 
 ```javascript
-mongolab.listCollections('exampledb', function (err, collections) {
+mLab.listCollections('exampledb', function (err, collections) {
   console.log(collections); // => [coll1, coll2, ...]
 });
 ```
@@ -53,7 +53,7 @@ var options = {
   query: '{ "key": "value" }'
 };
 
-mongolab.listDocuments(options, function (err, data) {
+mLab.listDocuments(options, function (err, data) {
   console.log(data); //=> [ { _id: 1234, ...  } ]
 });
 ```
@@ -221,7 +221,7 @@ commands| the document's id | `Object` | Yes |
     
 ## Requirements
 
-- A [MongoLab](https://mongolab.com/) account w/API key.
+- [mLab](https://mlab.com/) account w/API key.
 - node.js v4.2.6+ (4.2.6 is the version I used to develop this module.  I'm
   unsure if it will work with previous ones.  If you run a previous version, and
   it works, let me know and I'll update this)
@@ -229,15 +229,15 @@ commands| the document's id | `Object` | Yes |
 
 ## Disclaimer
 
-### [From the official MongoLab Data API documentation](http://docs.mongolab.com/connecting/#methods):
+### [From the official mLab Data API documentation](http://docs.mlab.com/connecting/#methods):
 
-> MongoLab databases can be accessed by your application code in two ways.
+> mLab databases can be accessed by your application code in two ways.
 
 > The first method - the one we strongly recommend - is to connect using one of the MongoDB drivers (as described above). You do not need to use our API if you use the driver. In fact, using a driver provides better performance, better security, and more functionality.
 
-> The second method is to connect via MongoLab’s RESTful Data API. Use this method only if you cannot connect using a MongoDB driver.
+> The second method is to connect via mLab’s RESTful Data API. Use this method only if you cannot connect using a MongoDB driver.
 
-> ***Visit MongoLab's official documentation if you have any security concerns about using the Data API***
+> ***Visit mLab's official documentation if you have any security concerns about using the Data API***
 
 ## Contributions
 

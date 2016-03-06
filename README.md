@@ -196,7 +196,7 @@ Run a MongoDB database command
 Name | Description | Type | Required |
 -----|------------ |------|:----------:|
 database| MongoDB database name | `String` | Yes |
-commands| the document's id | `Object` | Yes |
+commands| MongoDB database command | `Object` | Yes |
 
 ### Notes
 - **Creating a new collection**

@@ -249,6 +249,10 @@ you want to add all kinds of crazy functionality - you might want to fork.
 When in doubt, send a pull request - the worst that can happen is that I won't
 merge it.
 
+## Related
+
+[mlab-cli](https://github.com/gmontalvoriv/mlab-cli): A command-line power tool for mLab (PKA MongoLab)
+
 ## License
 
 [MIT](https://github.com/gmontalvoriv/mongolab-data-api/blob/master/LICENSE) © Gabriel Montalvo

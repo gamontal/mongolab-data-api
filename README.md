@@ -93,7 +93,7 @@ query| restrict results by the specified JSON query | `String` | No |
 resultCount| return the result count for this query | `Boolean` | No |
 setOfFields| specify the set of fields to include or exclude in each document (1 - include; 0 - exclude) | `Object` | No |
 findOne| return a single document from the result set (same as findOne() using the mongo shell) | `Boolean` | No |
-sortOrder| specify the order in which to sort each specified field (1- ascending; -1 - descending) | `Object` | No |
+sortOrder| specify the order in which to sort each specified field (1- ascending; -1 - descending) | `String` | No |
 skipResults| number of documents to skip | `Number` | No |
 limit| number of documents to return | `Number` | No |
 

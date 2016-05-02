@@ -1,6 +1,6 @@
 'use strict';
 
-var httpReq = require('./lib/request');
+var http = require('./lib/request');
 var BASE_URL = 'https://api.mongolab.com/api/1/';
 
 var MongoLab = function (apiKey) {
@@ -10,7 +10,7 @@ var MongoLab = function (apiKey) {
 
   this.APIKEY = apiKey;
 
-  var KEY_CHECK_URL = httpReq.httpGET(BASE_URL + 'databases?apiKey=' + this.APIKEY);
+  var KEY_CHECK_URL = http.get(BASE_URL + 'databases?apiKey=' + this.APIKEY);
   if (KEY_CHECK_URL.message === 'Please provide a valid API key.') {
     throw new Error('Invalid API key');
   }
@@ -18,7 +18,7 @@ var MongoLab = function (apiKey) {
 
 (function () {
   this.listDatabases = function (cb) {
-    var res = httpReq.httpGET(BASE_URL + 'databases?apiKey=' + this.APIKEY);
+    var res = http.get(BASE_URL + 'databases?apiKey=' + this.APIKEY);
     cb(null, res);
   };
 
@@ -27,7 +27,7 @@ var MongoLab = function (apiKey) {
       throw new Error('database name is required');
     }
 
-    var res = httpReq.httpGET(BASE_URL + 'databases/' + database + '/collections?apiKey=' + this.APIKEY);
+    var res = http.get(BASE_URL + 'databases/' + database + '/collections?apiKey=' + this.APIKEY);
     cb(null, res);
   };
 
@@ -47,7 +47,7 @@ var MongoLab = function (apiKey) {
     if (database === null || collectionName === null) {
       cb(new Error('invalid options'), null);
     } else {
-      var res = httpReq.httpGET(BASE_URL + 'databases/' + database + '/collections/' + collectionName + '?apiKey=' + this.APIKEY +
+      var res = http.get(BASE_URL + 'databases/' + database + '/collections/' + collectionName + '?apiKey=' + this.APIKEY +
                         (OPTIONAL_PARAMS.q ? '&q=' + OPTIONAL_PARAMS.q : '') + (OPTIONAL_PARAMS.c ? '&c=' + OPTIONAL_PARAMS.c : '') +
                         (OPTIONAL_PARAMS.f ? '&f=' + OPTIONAL_PARAMS.f : '') + (OPTIONAL_PARAMS.fo ? '&fo=' + OPTIONAL_PARAMS.fo : '') +
                         (OPTIONAL_PARAMS.s ? '&s=' + OPTIONAL_PARAMS.s : '') + (OPTIONAL_PARAMS.sk ? '&sk=' + OPTIONAL_PARAMS.sk : '') +
@@ -65,7 +65,7 @@ var MongoLab = function (apiKey) {
     if (database === null || collectionName === null || documents === null) {
       cb(new Error('invalid options'), null);
     } else {
-      var res = httpReq.httpPOST(BASE_URL + 'databases/' + database + '/collections/' + collectionName +
+      var res = http.post(BASE_URL + 'databases/' + database + '/collections/' + collectionName +
                                      '?apiKey=' + this.APIKEY, documents);
 
       cb(null, res);
@@ -85,7 +85,7 @@ var MongoLab = function (apiKey) {
     if (database === null || collectionName === null || data === null) {
       cb(new Error('invalid options'), null);
     } else {
-      var res = httpReq.httpPUT(BASE_URL + 'databases/' + database + '/collections/' + collectionName + '?apiKey=' + this.APIKEY +
+      var res = http.put(BASE_URL + 'databases/' + database + '/collections/' + collectionName + '?apiKey=' + this.APIKEY +
                         (OPTIONAL_PARAMS.q ? '&q=' + OPTIONAL_PARAMS.q : '') + (OPTIONAL_PARAMS.m ? '&m=' + OPTIONAL_PARAMS.m : '') +
                         (OPTIONAL_PARAMS.u ? '&u=' + OPTIONAL_PARAMS.u : ''), data);
 
@@ -104,7 +104,7 @@ var MongoLab = function (apiKey) {
     if (database === null || collectionName === null) {
       cb(new Error('invalid options'), null);
     } else {
-      var res = httpReq.httpPUT(BASE_URL + 'databases/' + database + '/collections/' + collectionName +
+      var res = http.put(BASE_URL + 'databases/' + database + '/collections/' + collectionName +
                                 '?apiKey=' + this.APIKEY + (OPTIONAL_PARAMS.q ? '&q=' + OPTIONAL_PARAMS.q : ''), documents);
 
       cb(null, res);
@@ -120,7 +120,7 @@ var MongoLab = function (apiKey) {
       cb(new Error('document id is required'), null);
     } else {
 
-      var res = httpReq.httpGET(BASE_URL + 'databases/' + database + '/collections/' + collectionName + '/' + id + '?apiKey=' + this.APIKEY);
+      var res = http.get(BASE_URL + 'databases/' + database + '/collections/' + collectionName + '/' + id + '?apiKey=' + this.APIKEY);
 
       cb(null, res);
     }
@@ -135,7 +135,7 @@ var MongoLab = function (apiKey) {
     if (typeof id !== 'string' || id === null || updateObject === null) {
       cb(new Error('document id is required'), null);
     } else {
-      var res = httpReq.httpPUT(BASE_URL + 'databases/' + database + '/collections/' + collectionName + '/' + id + '?apiKey=' +
+      var res = http.put(BASE_URL + 'databases/' + database + '/collections/' + collectionName + '/' + id + '?apiKey=' +
                                 this.APIKEY, updateObject);
 
       cb(null, res);
@@ -150,7 +150,7 @@ var MongoLab = function (apiKey) {
     if (typeof id !== 'string' || id === null) {
       cb(new Error('document id is required'), null);
     } else {
-      var res = httpReq.httpDELETE(BASE_URL + 'databases/' + database + '/collections/' + collectionName + '/' + id + '?apiKey=' + this.APIKEY);
+      var res = http.del(BASE_URL + 'databases/' + database + '/collections/' + collectionName + '/' + id + '?apiKey=' + this.APIKEY);
 
       cb(null, res);
     }
@@ -163,7 +163,7 @@ var MongoLab = function (apiKey) {
     if (database === null || commands === null) {
       cb(new Error('invalid options'), null);
     } else {
-      var res = httpReq.httpPOST(BASE_URL + 'databases/' + database + '/runCommand?apiKey=' + this.APIKEY, commands);
+      var res = http.post(BASE_URL + 'databases/' + database + '/runCommand?apiKey=' + this.APIKEY, commands);
 
       cb(null, res);
     }

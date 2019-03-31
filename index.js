@@ -76,8 +76,10 @@ var MongoLab = function (apiKey) {
     var database = options.database || null;
     var collectionName = options.collectionName || null;
     var data = { "$set" : options.data } || null;
+    // check if query is an object
+    var query = (options.query === Object(options.query)) ? JSON.stringify(options.query) : options.query
     var OPTIONAL_PARAMS = {
-      q: options.query || null,
+      q: query || null,
       m: options.allDocuments || null,
       u: options.upsert || null
     };

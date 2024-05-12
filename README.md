@@ -1,3 +1,5 @@
+## ⚠️ This repository is no longer maintained.
+
 # mongolab-data-api [![Build Status](https://travis-ci.org/gmontalvoriv/mongolab-data-api.svg?branch=master)](https://travis-ci.org/gmontalvoriv/mongolab-data-api) [![npm version](https://badge.fury.io/js/mongolab-data-api.svg)](https://badge.fury.io/js/mongolab-data-api) [![Known Vulnerabilities](https://snyk.io/test/npm/name/badge.svg)](https://snyk.io/test/npm/mongolab-data-api)
 
 `mongolab-data-api` is a node.js module designed to allow you to access [mLab's Data API](http://docs.mlab.com/data-api/#reference) with minimal overhead.
